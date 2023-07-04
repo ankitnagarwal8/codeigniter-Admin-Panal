@@ -159,7 +159,7 @@ form .form-row .textarea{
       <div class="text">
          Add Teacher's
       </div>
-      <form action="">
+      <form method="post" action="<?= base_url('Teacher/Registration');?>" enctype="multipart/form-data" >
          <div class="form-row">
             <div class="input-data">
                <input type="text" required>
@@ -181,7 +181,7 @@ form .form-row .textarea{
             <div class="input-data">
                <input type="number" required>
                <div class="underline"></div>
-               <label for="">Mobile Number</label>
+               <label for="">tel number</label>
             </div>
          </div>
          <div class="form-row">
