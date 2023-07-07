@@ -116,7 +116,7 @@
 
 					<div class="option2 nav-option">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img" alt="articles">
-						<h3><a href="<?= base_url('Student/student_details') ?>"> Students</a></h3>
+						<h3><a href="<?= base_url('Pagination'); ?>"> Students</a></h3>
 					</div>
 
 					<div class="nav-option option3">
@@ -171,6 +171,31 @@
 
 				</table>
 
+
+
+				<script type="text/javascript">
+     				$(document).ready(function(){
+
+       					 $('#empTable').DataTable({
+         						 'processing': true,
+          						 'serverSide': true,
+          						 'serverMethod': 'post',
+         						 'ajax': {
+            					 'url':'<?= base_url('Teacher/empList'); ?>'
+          					},
+          			'columns': [
+                                 { data: 'name' },
+                                 { data: 'post' },
+                                 { data: 'salary' },
+                                 { data: 'mobile_number' },
+                                 { data: 'photo' },
+                                 { data: 'Edit' },
+                                 { data: 'Delete' }
+          
+          ]
+        });
+     });
+     </script>
      
 		    </div>
 			

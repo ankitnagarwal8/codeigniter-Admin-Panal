@@ -157,35 +157,40 @@ form .form-row .textarea{
 <body>
 	<div class="container">
       <div class="text">
-         Add Teacher's
+         Edit Teacher's Data
       </div>
-      <form method="post" action="<?= base_url('Teacher/add');?>" enctype="multipart/form-data" >
+      <?php 
+
+  foreach($results as $result):
+
+   ?>
+      <form method="post" action="<?= base_url('Edit_Teacher_Details/edit_details/'.$result['id'])?>" enctype="multipart/form-data" >
          <div class="form-row">
             <div class="input-data">
-               <input type="text" required name="name">
+               <input type="text" name="name" value="<?php echo $result['name']; ?>" >
                <div class="underline"></div>
                <label for="">Name</label>
             </div>
             <div class="input-data">
-               <input type="text" required name="post">
+               <input type="text" name="post" value="<?php echo $result['post']; ?>">
                <div class="underline"></div>
                <label for="">Post</label>
             </div>
          </div>
          <div class="form-row">
             <div class="input-data">
-               <input type="number" required  name="salary">
+               <input type="number" name="salary" value="<?php echo $result['salary']; ?>">
                <div class="underline"></div>
                <label for="">Salary</label>
             </div>
             <div class="input-data">
-               <input type="number" required name="number">
+               <input type="number" name="number" value="<?php echo $result['mobile_number']; ?>">
                <div class="underline"></div>
                <label for="">tel number</label>
             </div>
          </div>
          <div class="form-row">
-         	<input type="file" name="image">
+         	<input type="file" name="image" value="<?php echo $result['photo']; ?>">
          </div>
             <br />
             <div class="form-row submit-btn">
@@ -196,6 +201,7 @@ form .form-row .textarea{
             </div>
       
       </form>
+      <?php endforeach;  ?>
       </div>
 
 </body>

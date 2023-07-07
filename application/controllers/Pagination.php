@@ -12,13 +12,13 @@ class Pagination extends CI_Controller {
 
    }
 
-   public function index(){
+    public function index(){
 
      $this->load->view('Student_Details');
 
 
 
-   }
+    }
 
    public function empList(){
 
@@ -38,7 +38,7 @@ class Pagination extends CI_Controller {
        $q=$this->Delete->delete_data($id);
        if($q==true){
          
-                    $this->load->view('Student_Details');
+            $this->load->view('Student_Details');
     }
       else{
         echo "Error!";

@@ -92,13 +92,13 @@
 				<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="icn srchicn" alt="search-button">
 				</div>
 			</div>
-
+			<form method="post" action="<?= base_url('Basic_Details'); ?>" enctype="multipart/form-data">
 			<div class="box-container">
 
 				<div class="box box1">
 					<div class="text">
-						<h2 class="topic-heading">60.5k</h2>
-						<h2 class="topic">Article Views</h2>
+						<h2 class="topic-heading">2</h2>
+						<h2 class="topic">Total Students</h2>
 					</div>
 
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
@@ -108,7 +108,7 @@
 				<div class="box box2">
 					<div class="text">
 						<h2 class="topic-heading">150</h2>
-						<h2 class="topic">Likes</h2>
+						<h2 class="topic">Total Teacher</h2>
 					</div>
 
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
@@ -118,7 +118,7 @@
 				<div class="box box3">
 					<div class="text">
 						<h2 class="topic-heading">320</h2>
-						<h2 class="topic">Comments</h2>
+						<h2 class="topic">Course</h2>
 					</div>
 
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
@@ -128,13 +128,13 @@
 				<div class="box box4">
 					<div class="text">
 						<h2 class="topic-heading">70</h2>
-						<h2 class="topic">Published</h2>
+						<h2 class="topic">Site Visiters</h2>
 					</div>
 
 					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
 				</div>
 			</div>
-
+		</form>
 			<div class="report-container">
 				<div class="report-header">
 					<h1 class="recent-Articles">Recent Articles</h1>
