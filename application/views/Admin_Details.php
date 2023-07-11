@@ -153,16 +153,21 @@
 			 		<input type="text" name="name" value="<?php echo $result['name']; ?>"><input type="email" name="email" value="<?php echo $result['email']; ?>">
 			 		<br>
 			 		<br>
-			 		<input type="number" name="mnum" value="<?php echo $result['mobile']; ?>"><input type="text" name="password" value="<?php echo $result['password']; ?>">
+			 		<input type="number" name="mnum" value="<?php echo $result['mobile']; ?>">
 			 		<input type="file" name="image">
 			 		<button type="submit">update</button>
-
-
 			 	</div>
 			 </div><?php
 			 endforeach;
 			?>
 			</form>
+			 </div>
+			 <div class="password">
+			 	<form method="post" action="<?= base_url('Admin_Details/updatepass');?>">
+			 		<input type="password" name="oldpass"><input type="password" name="newpass"><br>
+			 		<input type="submit" name="submit">
+			 	</form>
+			 	
 			 </div>
 
 		</div>

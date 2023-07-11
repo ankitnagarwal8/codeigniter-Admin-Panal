@@ -10,6 +10,8 @@ class Admin_Details extends CI_Controller {
         $mnum=$this->input->post('mnum');
         $pass=$this->input->post('password');
 
+        $pass1= md5($pass);
+
 
         $files_get=$_FILES["image"]["name"];
             if(!empty($files_get)){
@@ -35,7 +37,7 @@ class Admin_Details extends CI_Controller {
                     'name'=>$name,
                     'email'=>$email,
                     'mobile'=>$mnum,
-                    'password'=>$pass,
+                    'password'=>$pass1,
                     "image"=> $data['image_metadata']['file_name']
                     );
                      $this->db->where("id",$id);
@@ -46,7 +48,7 @@ class Admin_Details extends CI_Controller {
                         'name'=>$name,
                         'email'=>$email,
                         'mobile'=>$mnum,
-                        'password'=>$pass
+                        'password'=>$pass1
                     );
                    $this->db->where("id",$id);
                    $update=$this->db->update('admin', $updateArr);
@@ -66,6 +68,32 @@ class Admin_Details extends CI_Controller {
     public function Admin(){
         $this->load->model("");
         $this->load->view('Admin_Details');
+    }
+
+
+    public function updatepass(){
+
+        $oldpass=$this->input->post('oldpass');
+        $newpass=$this->input->post('newpass');
+        $newpass=md5('newpass');
+        $this->load->model('Admin_data');
+        $pass = $this->Admin_data->match_old_pass($oldpass);
+
+        if($oldpass===true)
+        {
+            $this->load->model('Admin_data');
+            $res= $this->Admin_data->updating($newpass1);
+            if($res===true){
+                $this->load->view('Admin_Details');
+            }else{
+                echo "data not updated";
+            }
+            
+
+        }else{
+            echo "please enter corret old pass";
+        }
+
     }
 
     

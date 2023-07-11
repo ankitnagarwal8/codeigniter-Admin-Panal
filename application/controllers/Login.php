@@ -15,6 +15,10 @@ class Login extends CI_Controller {
              $email= $this->input->post('email');
     		 $pass =  $this->input->post('password');
 
+             $pass1 = md5($pass);
+
+
+
     		 $this->form_validation->set_rules($pass, 'Password', 'required');
         	 $this->form_validation->set_rules($email, 'Email', 'required');
 
@@ -29,6 +33,7 @@ class Login extends CI_Controller {
 	
 	              if($result=='true')
 	              {
+
                      $newdata = array( 
                             'email'  => $email, 
                             'password'     => $pass, 
