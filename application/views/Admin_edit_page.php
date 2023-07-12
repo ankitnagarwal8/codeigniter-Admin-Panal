@@ -71,7 +71,7 @@
 			 		<input type="text" value=""><input type="email" value="">
 			 		<br>
 			 		<br>
-			 		<input type="number" name="mnum" value=""><input type="text" name="password" value="">
+			 		<input type="number" name="mnum" value=""> <input type="text" name="password" value="">
 			 		<button type="submit">update</button>
 
 

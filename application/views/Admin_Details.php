@@ -1,4 +1,4 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -135,7 +135,6 @@
 			</nav>
 		</div>
 		<?php
-			
 			foreach($results as $result):
 
 		?>
@@ -163,7 +162,7 @@
 			</form>
 			 </div>
 			 <div class="password">
-			 	<form method="post" action="<?= base_url('Admin_Details/updatepass');?>">
+			 	<form method="post" action="<?= base_url('Admin_Details/updatepass/'.$result['id']);?>">
 			 		<input type="password" name="oldpass"><input type="password" name="newpass"><br>
 			 		<input type="submit" name="submit">
 			 	</form>

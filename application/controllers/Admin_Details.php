@@ -4,7 +4,7 @@ class Admin_Details extends CI_Controller {
 
     public function index($id)
     {
-        
+
         $name= $this->input->post('name');
         $email=$this->input->post('email');
         $mnum=$this->input->post('mnum');
@@ -65,27 +65,33 @@ class Admin_Details extends CI_Controller {
        
 
     }
-    public function Admin(){
+   /* public function Admin(){
         $this->load->model("");
         $this->load->view('Admin_Details');
     }
 
-
-    public function updatepass(){
+*/
+    public function updatepass($id){
 
         $oldpass=$this->input->post('oldpass');
         $newpass=$this->input->post('newpass');
-        $newpass=md5('newpass');
-        $this->load->model('Admin_data');
-        $pass = $this->Admin_data->match_old_pass($oldpass);
 
-        if($oldpass===true)
+        $newpass1=md5($newpass);
+        $oldpass1=md5($oldpass);
+        $this->load->model('Admin_data');
+        $pass = $this->Admin_data->match_old_pass($oldpass1);
+        
+        if($pass===true)
         {
             $this->load->model('Admin_data');
             $res= $this->Admin_data->updating($newpass1);
-            if($res===true){
-                
-                $this->load->view('Admin_Details');
+
+            if($res){
+                $this->load->model('Admin_data');
+
+                $results = $this->Admin_data->get_admin_data($id);
+                $data["results"] = $results;
+                $this->load->view('Admin_Details', $data);
             }else{
                 echo "data not updated";
             }

@@ -16,25 +16,33 @@ class Admin_data extends CI_Model
 		return $q->result_array();
 
 	}
-	function match_old_pass($oldpass){
+	function get_admin_data($id){
+		$this->load->database();
+		$this->db->where('id',$id);
+		$res=$this->db->get('admin');
+
+		return $res->result_array();
+
+
+	}
+	function match_old_pass($oldpass1){
 		$this->load->database();
 
+        $this->db->where('password',$oldpass1);
 
-        $this->db->where('password',$oldpass);
         $data= $this->db->get('admin')->num_rows();
 
         if ($data>0)  
-        {  
+        {
 			return true;  
         } else {  
-        
             return false;  
         }
 	}
-	function updating($newpass){
+	function updating($newpass1){
 		$this->load->database();
 		$updateArr=array(
-                        'password'=>$newpass
+                        'password'=>$newpass1
                     );
         $update=$this->db->update('admin', $updateArr);
 
