@@ -84,6 +84,7 @@ class Admin_Details extends CI_Controller {
             $this->load->model('Admin_data');
             $res= $this->Admin_data->updating($newpass1);
             if($res===true){
+                
                 $this->load->view('Admin_Details');
             }else{
                 echo "data not updated";
