@@ -56,10 +56,6 @@ class Login extends CI_Controller {
 
         public function Admin_data()
         {
-            // echo md5("qwerty");  
-            // 827ccb0eea8a706c4c34a16891f84e7b
-            //e10adc3949ba59abbe56e057f20f883e
-            
               $email = $this->session->userdata('email');
               $pass= $this->session->userdata('pass');
 

@@ -65,12 +65,7 @@ class Admin_Details extends CI_Controller {
        
 
     }
-   /* public function Admin(){
-        $this->load->model("");
-        $this->load->view('Admin_Details');
-    }
-
-*/
+   
     public function updatepass($id){
 
         $oldpass=$this->input->post('oldpass');

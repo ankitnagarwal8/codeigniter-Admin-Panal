@@ -1,0 +1,114 @@
+ .full-background {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: -20px;
+            height: 100vh;
+            width: 100%;
+            background: url('http://localhost/Student_Management/assets/images/5407244.jpg') center center / cover no-repeat;
+             
+
+        }
+        .w3school{
+            margin-left: 25px;
+            
+
+        }
+        .w{
+            font-size: 20rem;
+            background-color: red;
+            border-radius: 20px;
+
+        }
+        .three{
+            font-size: 20rem;
+            color: lightgoldenrodyellow;
+            background-color: pink;
+            border-radius: 20px;
+            transform: rotate(20deg);
+        }
+        .school{
+            font-size: 20rem;
+            background-color: yellow;
+            border-radius: 20px;
+        }
+        .full-background{
+            width: 100%;
+        }
+        
+        .jumbotron {
+                background-color: #f4511e;
+                color: #fff;
+                padding: 100px 25px;
+        }
+        .container-fluid {
+                padding: 60px 50px;
+        }
+        .bg-grey {
+                background-color: #f6f6f6;
+        }
+        .logo-small {
+                color: #f4511e;
+                font-size: 50px;
+        }
+        .logo {
+                color: #f4511e;
+                font-size: 200px;
+        }
+        .thumbnail {
+                padding: 0 0 15px 0;
+                border: none;
+                border-radius: 0;
+        }
+        .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+                .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+        }
+        .w3school{
+            margin-left: 25px;
+            margin-top: -0vh;
+
+        }
+        .w{
+            font-size: 8rem;
+
+        }
+        .three{
+            font-size: 16rem;
+            color: lightgoldenrodyellow;
+        }
+        .school{
+            font-size: 8rem;
+        }
+
+    }
+     .btn {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #f1f1f1;
+            border-radius: 0;
+            transition: .2s;
+        }
+     .btn:hover, .btn:focus {
+            border: 1px solid #333;
+            background-color: #fff;
+            color: #000;
+     }
+    .carousel{
+             height: 30rem;
+    }
+    .carousel-inner{
+            padding-top:10rem;
+    }
+    .carousel ol li{
+            background-color: red;
+            border: 0.5px solid red;
+        }
+         

@@ -60,6 +60,30 @@
 			border: none;
 			text-align: center;
 		}
+		.password input[type='submit']{
+			background-color: #999999;
+		}
+		.password input{
+			margin: 1rem;
+			height: 3rem;
+			width:17rem;
+			border-radius: 3rem;
+			border: none;
+			text-align: center;
+			background-color: #E7B6F3;
+
+		}
+		.password button{
+			background-color: #999999;
+			margin: 1rem;
+			height: 3rem;
+			width:17rem;
+			border-radius: 3rem;
+			border: none;
+			text-align: center;
+		}
+
+
 
 
 	</style>	
@@ -163,7 +187,7 @@
 			 </div>
 			 <div class="password">
 			 	<form method="post" action="<?= base_url('Admin_Details/updatepass/'.$result['id']);?>">
-			 		<input type="password" name="oldpass"><input type="password" name="newpass"><br>
+			 		<input type="password" name="oldpass" placeholder="Old Password"><input type="password" name="newpass" placeholder="New Password"><br>
 			 		<input type="submit" name="submit">
 			 	</form>
 			 	
