@@ -1,49 +1,42 @@
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-	<!-- Navbar -->
-<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">W3School</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#"> About</a></li>
-      <li><a href="#">servies</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="<?= base_url("Login"); ?>">login</a></li>
-          <li><a href="<?= base_url("/Student/Registration"); ?>">Registration</a></li>
-          <li><a href="#">contact</a></li>
+      <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="active" href="<?= base_url('Landing_home'); ?>">Home</a></li>
+          <li><a href="<?= base_url('Landing_home/about'); ?>">About</a></li>
+          <li><a href="<?= base_url('Landing_home/course'); ?>">Courses</a></li>
+          <li><a href="<?= base_url('Landing_home/trainers'); ?>">Trainers</a></li>
+          <li><a href="<?= base_url('Landing_home/events');?>">Events</a></li>
+          <li><a href="<?= base_url('Landing_home/pricing');?>">Pricing</a></li>
+
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="<?= base_url("Login"); ?>">Login</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="<?= base_url("/Student/Registration"); ?>">Registration</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a href="<?= base_url('Landing_home/contact');?>">Contact</a></li>
         </ul>
-      </li>
-    </ul>
-  </div>
-</nav> -->
-<!-- Navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="courses.html" class="get-started-btn">Get Started</a>
+
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about" class="active">HOME</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">ABOUT</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="<?= base_url("Login"); ?>">login</a></li>
-          <li><a href="<?= base_url("/Student/Registration"); ?>">Registration</a></li>
-          <li><a href="#">contact</a></li>
-        </ul>
-      </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </header><!-- End Header -->
