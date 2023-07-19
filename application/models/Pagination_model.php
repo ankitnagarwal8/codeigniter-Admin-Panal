@@ -18,7 +18,7 @@ class Pagination_model extends CI_Model {
      ## Search 
      $searchQuery = "";
      if($searchValue != ''){
-        $searchQuery = " (emp_name like '%".$searchValue."%' or email like '%".$searchValue."%' or city like'%".$searchValue."%' ) ";
+        $searchQuery = " (student_name like '%".$searchValue."%' or father_name like '%".$searchValue."%' or sex like'%".$searchValue."%' ) ";
      }
 
      ## Total number of records without filtering

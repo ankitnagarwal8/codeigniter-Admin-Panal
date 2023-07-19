@@ -27,3 +27,6 @@
 
   <!-- Template Main JS File -->
   <script src="http://localhost/project1/assets/js/main.js"></script>
+
+
+

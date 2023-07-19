@@ -56,7 +56,43 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="<?= base_url('home'); ?>">More</a>
+							<a href="<?= base_url('home'); ?>">Home</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">About</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Course</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Trainer</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Events</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Pricing</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Contact</a>
 						</h3>
 					</div>
 
@@ -69,6 +105,8 @@
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img" alt="blog">
 						<h3><a href="<?= base_url('Login/Admin_data'); ?>"> Admin Details</a></h3>
 					</div>
+
+					
 
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">

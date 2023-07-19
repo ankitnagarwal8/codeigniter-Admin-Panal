@@ -121,7 +121,45 @@
 
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
-						<h3><a href="<?= base_url('home'); ?>">More</a></h3>
+						<h3>
+							<a href="<?= base_url('home'); ?>">Home</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">About</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Course</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Trainer</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Events</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Pricing</a>
+						</h3>
+					</div>
+					<div class="nav-option option3">
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+						<h3>
+							<a href="#">Contact</a>
+						</h3>
 					</div>
 
 					<div class="nav-option option4">

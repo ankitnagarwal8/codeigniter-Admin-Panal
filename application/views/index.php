@@ -1,11 +1,4 @@
-<?php 
 
-print_r($results);
-die;
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,42 +23,47 @@ die;
 
   <!-- ======= Header ======= -->
   <?php include("header.php"); ?>
-
-  <?php
-  foreach($results as $result):
-  ?>
+<?php
+foreach ($results as $result):
+ 
+?>
+  
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex justify-content-center align-items-center" style="background: url('../photos/<?php echo $result["bgimg"]; ?>') top center;">
+  <section id="hero" class="d-flex justify-content-center align-items-center" style="background: url('<?= base_url("../photos/".$result['bgimg']) ?>') top center;">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Learning Today,<br>Leading Tomorrow</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="courses.html" class="btn-get-started">Get Started</a>
+      <h1><?php echo $result['heading_frist']; ?><br><?php echo $result['heading_second']; ?></h1>
+      <h2><?php echo $result['text']; ?></h2>
+      <a href="<?= base_url('Landing_home/course')?>" class="btn-get-started">Get Started</a>
     </div>
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 <?php endforeach; ?>
   <main id="main">
+<?php 
 
+foreach ($results2 as $result2):
+
+ ?>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="<?= base_url("../photos/".$result2['image']) ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3><?php echo $result2['heading']; ?></h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              <?php echo $result2['paragraph_frist']; ?>
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> <?php echo $result2['list_frist']; ?></li>
+              <li><i class="bi bi-check-circle"></i><?php echo $result2['list_second']; ?></li>
+              <li><i class="bi bi-check-circle"></i><?php echo $result2['list_third']; ?></li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              <?php echo $result2['paragraph_second']; ?>
             </p>
 
           </div>
@@ -73,9 +71,9 @@ die;
 
       </div>
     </section><!-- End About Section -->
-
+<?php endforeach; ?>
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
+<!--     <section id="counts" class="counts section-bg">
       <div class="container">
 
         <div class="row counters">
@@ -103,22 +101,25 @@ die;
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> -->
+    <!-- End Counts Section -->
 
     <!-- ======= Why Us Section ======= -->
+    <?php  
+    foreach ($results3 as $result3):
+    ?>
     <section id="why-us" class="why-us">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>Why Choose Mentor?</h3>
+              <h3><?php echo $result3['heading_frist']; ?></h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                <?php echo $result3['paragraph_frist']; ?>
               </p>
               <div class="text-center">
-                <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="<?= base_url('Landing_home/about');?>" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
@@ -128,25 +129,26 @@ die;
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4><?php echo $result3['servies_frist_heading']; ?></h4>
+                    <p><?php echo $result3['servies_frist_paragraph']; ?></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4><?php echo $result3['servies_second_heading']; ?></h4>
+                    <p><?php echo $result3['servies_second_paragraph']; ?></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4><?php echo $result3['servies_third_heading']; ?></h4>
+                    <p><?php echo $result3['servies_third_paragraph']; ?></p>
                   </div>
                 </div>
               </div>
+            <?php endforeach; ?>
             </div><!-- End .content-->
           </div>
         </div>
@@ -256,7 +258,7 @@ die;
                   <p class="price">$169</p>
                 </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
+                <h3><a href="course-details.php">Website Design</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -282,7 +284,7 @@ die;
                   <p class="price">$250</p>
                 </div>
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
+                <h3><a href="course-details.php">Search Engine Optimization</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -308,7 +310,7 @@ die;
                   <p class="price">$180</p>
                 </div>
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
+                <h3><a href="course-details.php">Copywriting</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -337,7 +339,7 @@ die;
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+              <img src="<?=base_url("../assets/img/trainers/trainer-1.jpg");?>" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>Walter White</h4>
                 <span>Web Development</span>
@@ -356,7 +358,7 @@ die;
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
+              <img src="<?=base_url("../assets/img/trainers/trainer-2.jpg");?>" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>Sarah Jhinson</h4>
                 <span>Marketing</span>
@@ -375,7 +377,7 @@ die;
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+              <img src="<?=base_url("../assets/img/trainers/trainer-3.jpg");?>" class="img-fluid" alt="">
               <div class="member-content">
                 <h4>William Anderson</h4>
                 <span>Content</span>
