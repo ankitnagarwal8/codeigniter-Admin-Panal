@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GeeksForGeeks</title>
 	<link rel="stylesheet" href="http://localhost/Student_Management/assets/css/adminstyle.css">
+
 	<style type="text/css">
 		*{
 			padding: 0;
@@ -47,6 +48,9 @@
           	text-align: center;
           	width: 50%;
           }
+
+
+
 	</style>
 	
 </head>
@@ -101,7 +105,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">About</a>
+							<a href="<?= base_url('admin_About');?>">About</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
@@ -240,7 +244,7 @@
 
 			<!-- end part 2 -->
 
-			<!-- end part 3 -->
+			<!-- part 3 -->
 
 
 			 <div class="home_section">
@@ -288,12 +292,62 @@
   					</div>
 				</div>
 			</div>
-		</form>
+			</form>
 			</div>
 
+			<!-- end part 3 -->
 
+			<!-- part4 -->
 
+			<!-- <div class="home_section">
+				<div class="home">
+					<h1>Home part 3</h1>
+				</div>
+				<form method="post" action="" enctype="multipart/form-data">
 
+					<div class="home_form">
+						<div class="row form_feilds" style="display: flex;" >
+  							<div class="col">
+   						 		<input type="text" name="heading_frist" class="form-control" placeholder="heading_frist" aria-label="First name">
+  							</div>
+  							<div class="col">
+    							<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="Last name">
+  							</div>
+						</div>
+						<div class="row form_feilds" style="display: flex;" >
+  							<div class="col">
+   						 		<input type="text" name="servies_frist_heading" class="form-control" placeholder="servies_frist_heading" aria-label="First name">
+  							</div>
+  							<div class="col">
+    							<input type="text" name="servies_frist_paragraph" class="form-control" placeholder="servies_frist_paragraph" aria-label="Last name">
+  							</div>
+						</div>
+						<div class="row form_feilds" style="display: flex;" >
+  							<div class="col">
+   						 		<input type="text" name="servies_second_heading" class="form-control" placeholder="servies_second_heading" aria-label="First name">
+  							</div>
+  							<div class="col">
+    							<input type="text" name="servies_second_paragraph" class="form-control" placeholder="servies_second_paragraph" aria-label="Last name">
+  							</div>
+						</div>
+						<div class="row form_feilds" style="display: flex;" >
+  							<div class="col">
+   						 		<input type="text" name="servies_third_heading" class="form-control" placeholder="servies_third_heading" aria-label="First name">
+  							</div>
+  							<div class="col">
+    							<input type="text" name="servies_third_paragraph" class="form-control" placeholder="servies_third_paragraph" aria-label="Last name">
+  							</div>
+						</div>
+						<div class="row form_feilds" style="display: flex;" >
+  				  			<div class="col">
+    							<button type="submit">update</button>
+  							</div>
+						</div>
+					</div>
+				</form>
+			</div> -->
+			
+  
 
 
 
@@ -307,5 +361,11 @@
 	</div>
 
 	<script src="http://localhost/Student_Management/assets/js/index.js"></script>
+
+
+
+
+
+
 </body>
 </html>

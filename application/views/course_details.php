@@ -8,7 +8,7 @@
   <title>Course Details - Mentor Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <?php  include('links'); ?>
+  <?php  include('links.php'); ?>
 </head>
 
 <body>

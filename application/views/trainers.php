@@ -15,31 +15,39 @@
 
 
   <?php include('header.php'); ?>
+<?php 
+foreach($results as $result):
 
+?>
 
   <main id="main" data-aos="fade-in">
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">
-        <h2>Trainers</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <h2><?php echo $result['heading']; ?></h2>
+        <p><?php echo $result['paragraph']; ?></p>
       </div>
     </div><!-- End Breadcrumbs -->
-
+<?php endforeach; ?>
     <!-- ======= Trainers Section ======= -->
-    <section id="trainers" class="trainers">
-      <div class="container" data-aos="fade-up">
+    
+    <section id="trainers" class="trainers" style="display:flex;">
+      <?php
+          foreach($results2 as $result2):
+    ?>
+      <div class="container" data-aos="fade-up" style="display: flex;">
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+              <img src="<?= base_url('../photos/'.$result2['photo']) ?>" class="img-fluid" >
               <div class="member-content">
-                <h4>Walter White</h4>
-                <span>Web Development</span>
+                <h4><?php echo $result2['name']; ?></h4>
+                <span><?php echo $result2['post']; ?></span>
                 <p>
-                  Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                  contact number : <?php echo $result2['mobile_number']; ?>
                 </p>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -50,49 +58,13 @@
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Sarah Jhinson</h4>
-                <span>Marketing</span>
-                <p>
-                  Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>William Anderson</h4>
-                <span>Content</span>
-                <p>
-                  Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        </div>    
 
       </div>
-    </section><!-- End Trainers Section -->
+       <?php endforeach; ?>
+    </section>
+   
+    <!-- End Trainers Section -->
 
   </main><!-- End #main -->
 

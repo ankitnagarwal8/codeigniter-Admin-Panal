@@ -163,13 +163,13 @@ foreach ($results2 as $result2):
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-lg-3 col-md-4">
             <div class="icon-box">
-              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <i class="fa fa-500px" style="color: #ffbb2c;"></i>
               <h3><a href="">Lorem Ipsum</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <i class="fa fa-android" style="color: #5578ff;"></i>
               <h3><a href="">Dolor Sitema</a></h3>
             </div>
           </div>
@@ -251,14 +251,14 @@ foreach ($results2 as $result2):
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="course-item">
-              <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+              <img src="<?= base_url("../assets/img/course-1.jpg");?>" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h4>Web Development</h4>
                   <p class="price">$169</p>
                 </div>
 
-                <h3><a href="course-details.php">Website Design</a></h3>
+                <h3><a href="<?= base_url("Landing_home/course_details");?>">Website Design</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -333,18 +333,23 @@ foreach ($results2 as $result2):
     </section><!-- End Popular Courses Section -->
 
     <!-- ======= Trainers Section ======= -->
-    <section id="trainers" class="trainers">
-      <div class="container" data-aos="fade-up">
+    
+    <section id="trainers" class="trainers" style="display:flex;">
+      <?php
+          foreach($results7 as $result7):
+    ?>
+      <div class="container" data-aos="fade-up" style="display: flex;">
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="<?=base_url("../assets/img/trainers/trainer-1.jpg");?>" class="img-fluid" alt="">
+              <img src="<?= base_url('../photos/'.$result7['photo']) ?>" class="img-fluid">
               <div class="member-content">
-                <h4>Walter White</h4>
-                <span>Web Development</span>
+                <h4><?php echo $result7['name']; ?></h4>
+                <span><?php echo $result7['post']; ?></span>
                 <p>
-                  Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                  contact number : <?php echo $result7['mobile_number']; ?>
                 </p>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -355,49 +360,13 @@ foreach ($results2 as $result2):
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="<?=base_url("../assets/img/trainers/trainer-2.jpg");?>" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Sarah Jhinson</h4>
-                <span>Marketing</span>
-                <p>
-                  Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="<?=base_url("../assets/img/trainers/trainer-3.jpg");?>" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>William Anderson</h4>
-                <span>Content</span>
-                <p>
-                  Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-                </p>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        </div>    
 
       </div>
-    </section><!-- End Trainers Section -->
+       <?php endforeach; ?>
+    </section>
+   
+<!-- End Trainers Section -->
 
   </main><!-- End #main -->
 
