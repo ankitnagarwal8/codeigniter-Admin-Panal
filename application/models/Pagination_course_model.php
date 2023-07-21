@@ -1,7 +1,7 @@
 
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Teacher_Data_Show extends CI_Model {
+class Pagination_course_model extends CI_Model {
 
    function getEmployees($postData=null){
 
@@ -19,41 +19,41 @@ class Teacher_Data_Show extends CI_Model {
      ## Search 
      $searchQuery = "";
      if($searchValue != ''){
-        $searchQuery = " (name like '%".$searchValue."%' or post like '%".$searchValue."%' or salary like'%".$searchValue."%') ";
+        $searchQuery = " (coursename like '%".$searchValue."%' or courseprice like '%".$searchValue."%' or coursepart like'%".$searchValue."%' ) ";
      }
 
      ## Total number of records without filtering
      $this->db->select('count(*) as allcount');
-     $records = $this->db->get('teachers_data')->result();
+     $records = $this->db->get('admin_course_part2')->result();
      $totalRecords = $records[0]->allcount;
 
      ## Total number of record with filtering
      $this->db->select('count(*) as allcount');
      if($searchQuery != '')
         $this->db->where($searchQuery);
-     $records = $this->db->get('teachers_data')->result();
+     $records = $this->db->get('admin_course_part2')->result();
      $totalRecordwithFilter = $records[0]->allcount;
 
      ## Fetch records
      $this->db->select('*');
      if($searchQuery != '')
-        $this->db->where($searchQuery);
+     $this->db->where($searchQuery);
      $this->db->order_by($columnName, $columnSortOrder);
      $this->db->limit($rowperpage, $start);
-     $records = $this->db->get('teachers_data')->result();
+     $records = $this->db->get('admin_course_part2')->result();
 
      $data = array();
 
      foreach($records as $record ){
 
         $data[] = array( 
-           "name"=>$record->name,
-           "post"=>$record->post,
-           "salary"=>$record->salary,
-           "mobile_number"=>$record->mobile_number,
+           "coursename"=>$record->coursename,
+           "coursepart"=>$record->coursepart,
+           "courseprice"=>$record->courseprice,
+           "text_area"=>$record->text_area,
            "photo"=>"<img style='width:100px;height:100px;' src='http://localhost/Student_Management/photos/$record->photo'>",
-           "Edit"=>"<a  class='btn' href='".base_url('Edit_Teacher_Details/index/').$record->id."'> Edit</a>",
-           "Delete"=>"<a href='".base_url('Teacher/delete/').$record->id."'>Delete</a>"
+           "Edit"=>"<a  class='btn' href='".base_url('Admin_courses/course_edit/').$record->id."'> Edit</a>",
+           "Delete"=>"<a href='".base_url('Pagination_course/delete/').$record->id."'>Delete</a>"
         ); 
      }
 
@@ -70,10 +70,3 @@ class Teacher_Data_Show extends CI_Model {
 
 
 }
-
-
-
-
-
-
-?>

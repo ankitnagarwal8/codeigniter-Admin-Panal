@@ -146,9 +146,10 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Contact</a>
+							<a href="<?= base_url('Admin_contact')?>">Contact</a>
 						</h3>
 					</div>
+
 					<div class="nav-option option4">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="institution">
 						<h3><a href="<?= base_url('Teacher') ?>"> Teacher</a></h3>
@@ -158,6 +159,8 @@
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img" alt="blog">
 						<h3><a href="<?= base_url('Login/Admin_data'); ?>"> Admin Details</a></h3>
 					</div>
+
+					
 
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
@@ -173,50 +176,69 @@
 			</nav>
 		</div>
 		<div class="main">
-			<div class="home_section" >
-				<div class="home">
-				<h1>trainer part 1</h1>
-				</div>
-				<form method="post" action="<?= base_url('admin_trainers/trainer_part_frist');?>" enctype="multipart/form-data">
 
-					
-				 
-				<div class="home_form">
+ 
+			<form method="post" action="<?= base_url('Admin_contact/contact_part1');?>" enctype="multipart/form-data">
+
+			<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="frist_h1" class="form-control" placeholder="frist_h1" aria-label="First name">
+   						 <input type="text" name="heading" class="form-control" placeholder = "heading" value="" aria-label="First name">
   					</div>
   					<div class="col">
-    					<textarea name = "text_area"></textarea>
+    					<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="First name">
   					</div>
 				  </div>
-				 
+				  
+				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="email_id" class="form-control" placeholder="email_id" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<input type="text" name="email" class="form-control" placeholder="email" aria-label="First name">
+  					</div>
+  				</div>
+
+  				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="phone" class="form-control" placeholder="phone" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<input type="text" name="phone_number" class="form-control" placeholder="phone_number" aria-label="First name">
+  					</div>
+  				</div>
+
+  				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="location_name" class="form-control" placeholder="location_name" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<input type="text" name="full_address" class="form-control" placeholder="full_address" aria-label="First name">
+  					</div>
+  				</div>
+
+  				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="title" class="form-control" placeholder="title" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<textarea name="title_paragraph"></textarea>
+  					</div>
+  				</div>
+				
 				  <div class="row form_feilds"  style="display: flex;" >
+				  	
   					<div class="col">
    						 <button type="submit">update</button>
   					</div>  					
 				  </div>
 				 </div>
-				</form>
 			 </div>
-
-
-	
-
-
-
-
-
-			</div>
+			 </form>
 		</div>
 	</div>
 
+
 	<script src="http://localhost/Student_Management/assets/js/index.js"></script>
-
-
-
-
-
-
 </body>
 </html>

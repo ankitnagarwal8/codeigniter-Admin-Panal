@@ -122,7 +122,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Course</a>
+							<a href="<?= base_url('Admin_courses');?>">Course</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
@@ -146,7 +146,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Contact</a>
+							<a href="<?= base_url('Admin_contact')?>">Contact</a>
 						</h3>
 					</div>
 					<div class="nav-option option4">

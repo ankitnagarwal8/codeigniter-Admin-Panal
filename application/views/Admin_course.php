@@ -10,57 +10,66 @@
 	<title>GeeksForGeeks</title>
 	<link rel="stylesheet" href="http://localhost/Student_Management/assets/css/adminstyle.css">
 
-	<style type="text/css">
-		*{
-			padding: 0;
-			margin: 0;
-		}
+	<!-- Datatable CSS -->
+	<link href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+
+	<style>
 		.home_section{
+			border:1px solid lightgrey;
+			height:auto;
+			width:100%;
+			background-color: #fffddd;
+		}
+		.home{
+			height:5rem;
+			width:100%;
 			text-align: center;
-			border:2px solid black;
-			margin-top: 2rem;
-			
+			color:lightblue;
 		}
 		.home_form{
-			padding:2rem;
 			
-			width: 100%;
 		}
-		input[type="text"]{
-      		width: 100%;
-  			max-width: 600px;
-            height: 45px;
-            padding: 12px;
-            border: 1.5px solid lightgrey;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0px 0px 20px -18px;
-            margin: 1rem;
+		.form_feilds{
+			padding: 6vh;
+			width:100%;
+		}
+		.form_feilds input{
+			height: 10vh;
+			width:90%;
+			border: none;
+			border-radius: 1rem;
+			text-align: center;
+			background-color: #F7F6F1;
+			font-size:1.5rem;
+		}
+		textarea{
 
-          }
-          .form_feilds{
-          	width: 50%;
-          	display: flex;
-          }
-          .home_form .col{
-          	margin-left: 1rem;
-          	text-align: center;
-          	width: 50%;
-          }
-          textarea{
-          	width: 100%;
-  			max-width: 600px;
-            height: 100px;
-            padding: 12px;
-            border-radius: 12px;
-            border: 1.5px solid lightgrey;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0px 0px 20px -18px;
-            margin: 1rem;
-          }
-
-
+			border: none;
+			border-radius: 1rem;
+			text-align: center;
+			background-color: #F7F6F1;
+			font-size:1.5rem;
+		}
+		.cloumn_feild{
+			width:50%;
+		}
+		button{
+			 color: #ffffff;
+  			 background-color: #987B57;
+             border-radius: 8px;
+             padding: 9px 18px;
+             border:none;
+             display: inline-block;
+             font-family: "Lucida Console", Monaco, 
+		}
 
 	</style>
 	
@@ -149,6 +158,7 @@
 							<a href="#">Contact</a>
 						</h3>
 					</div>
+
 					<div class="nav-option option4">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="institution">
 						<h3><a href="<?= base_url('Teacher') ?>"> Teacher</a></h3>
@@ -158,6 +168,8 @@
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img" alt="blog">
 						<h3><a href="<?= base_url('Login/Admin_data'); ?>"> Admin Details</a></h3>
 					</div>
+
+					
 
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
@@ -173,26 +185,25 @@
 			</nav>
 		</div>
 		<div class="main">
+
+
 			<div class="home_section" >
 				<div class="home">
-				<h1>trainer part 1</h1>
+				<h1>course Part 1</h1>
 				</div>
-				<form method="post" action="<?= base_url('admin_trainers/trainer_part_frist');?>" enctype="multipart/form-data">
-
-					
-				 
+				<form method="post" action="<?= base_url('Admin_courses/course_part1');?>" enctype="multipart/form-data">
 				<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
-  					<div class="col">
+  					<div class="col cloumn_feild">
    						 <input type="text" name="frist_h1" class="form-control" placeholder="frist_h1" aria-label="First name">
   					</div>
-  					<div class="col">
+  					<div class="col cloumn_feild">
     					<textarea name = "text_area"></textarea>
   					</div>
 				  </div>
 				 
 				  <div class="row form_feilds"  style="display: flex;" >
-  					<div class="col">
+  					<div class="col cloumn_feild">
    						 <button type="submit">update</button>
   					</div>  					
 				  </div>
@@ -200,23 +211,102 @@
 				</form>
 			 </div>
 
+			 <div class="home_section" >
+				<div class="home">
+				<h1>course Part 2</h1>
+				</div>
+				<form method="post" action="<?= base_url('Admin_courses/course_part2');?>" enctype="multipart/form-data">
+				<div class="home_form">
+				  <div class="row form_feilds" style="display: flex;" >
+  					<div class="col cloumn_feild">
+   						 <input type="text" name="coursename" class="form-control" placeholder="coursename" aria-label="First name">
+  					</div>
+  					<div class="col cloumn_feild">
+   						 <input type="text" name="course_part" class="form-control" placeholder="course_part" aria-label="First name">
+  					</div>
+  					
+				  </div>
+				  <div class="row form_feilds" style="display: flex;" >
+  					<div class="col cloumn_feild">
+   						 <input type="text" name="course_price" class="form-control" placeholder="course_price" aria-label="First name">
+  					</div>
+  					<div class="col cloumn_feild">
+   						 <input type="file" name="image" class="form-control" placeholder="" aria-label="First name">
+  					</div>
+  					
+				  </div>
+				 
+				  <div class="row form_feilds"  style="display: flex;" >
+				  	<div class="col cloumn_feild">
+    					<textarea name = "text_area"></textarea>
+  					</div>
+  					<div class="col cloumn_feild">
+   						 <button type="submit">Add</button>
+  					</div>  					
+				  </div>
+				 </div>
+				</form>
+			 </div>
+
+
+			 <div class="home_section">
+			 	<div class="details">
+		    	<!-- Table -->
+				<table id='empTable' class='display dataTable'>
+
+   					<thead>
+       					<tr>
+                             <th>course name</th>
+                             <th>course part</th>
+                             <th>course price</th>
+                             <th>course details</th>
+                             <th>Photo</th>
+                             <th>Edit</th>
+                             <th>Delete</th>
+
+
+       					</tr>
+   					</thead>
+
+				</table>
+
+     
+		    </div>
+
 
 	
+			 </div>
 
 
 
 
-
-			</div>
+			
 		</div>
 	</div>
+	<script type="text/javascript">
+     $(document).ready(function(){
+
+        $('#empTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':"<?= base_url('Pagination_course/empList'); ?>"
+          },
+          'columns': [
+             { data: 'coursename' },
+             { data: 'coursepart' },
+             { data: 'courseprice' },
+             { data: 'text_area' },
+             { data: 'photo' },
+             { data: 'Edit' },
+             { data: 'Delete' }
+          
+          ]
+        });
+     });
+     </script>
 
 	<script src="http://localhost/Student_Management/assets/js/index.js"></script>
-
-
-
-
-
-
 </body>
 </html>

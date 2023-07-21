@@ -42,7 +42,7 @@ foreach($results as $result):
           
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="<?= base_url('../photos/'.$result2['photo']) ?>" class="img-fluid" >
+              <img src="<?= base_url('../photos/'.$result2['photo']) ?>" class="img-fluid">
               <div class="member-content">
                 <h4><?php echo $result2['name']; ?></h4>
                 <span><?php echo $result2['post']; ?></span>

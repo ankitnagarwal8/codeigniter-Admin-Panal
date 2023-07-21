@@ -16,12 +16,17 @@
   <?php include('header.php'); ?>
 
   <main id="main">
+    <?php 
 
+    foreach($results9090 as $result9090):
+
+
+    ?>
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Contact Us</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <h2><?php echo $result9090['heading'];?></h2>
+        <p><?php echo $result9090['paragraph'];?></p>
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -39,20 +44,20 @@
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4><?php echo $result9090['location_name'];?></h4>
+                <p><?php echo $result9090['address'];?></p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
+                <h4><?php echo $result9090['email_id'];?></h4>
+                <p>email</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4><?php echo $result9090['phone'];?></h4>
+                <p><?php echo $result9090['phone_number'];?></p>
               </div>
 
             </div>
@@ -83,7 +88,7 @@
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-
+<?php endforeach; ?>
           </div>
 
         </div>
