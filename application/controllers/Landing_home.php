@@ -41,6 +41,13 @@ class Landing_home extends CI_Controller {
 		$this->load->view('courses.php',$data);
 	}
 	public function events(){
+		
+		$this->load->model('events_data');
+		$data['events_details'] = $this->events_data->index();
+
+		$this->load->model('events_data');
+		$data['details2'] = $this->events_data->events_part_2();
+
 		$this->load->model('contact');
 		$data['results9090'] = $this->contact->index();
 		$this->load->view('events.php',$data);

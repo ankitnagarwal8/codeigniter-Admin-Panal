@@ -9,12 +9,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GeeksForGeeks</title>
 	<link rel="stylesheet" href="http://localhost/Student_Management/assets/css/adminstyle.css">
+
+	<!-- Datatable CSS -->
+	<link href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
 	<style type="text/css">
 		.head{
 			background-color: #ffddee;
 			text-align: center;
 			font-size: 2rem;
 			color:#458585;
+			display: block;
 		}
 		form{
 			text-align:center;
@@ -159,14 +170,61 @@
 			<div class="head">events part 1</div>
 				<div class="body">
 					<form method="post" action="<?= base_url('events_admin/Edit_Part_frist'); ?>" enctype="multipart/form-data">
+
 						<input type="text" name="heading" name="heading" placeholder="heading"><br>
+
 						<input type="text" name="paragraph" placeholder="paragraph"></br>
+
 						<button type="submit">update</button>
 					</form>
 				</div>			
+				<br>
+				<br>
+				<br>
+			<div class="head">events part 2</div>
+				<div class="body">
+					<table id='empTable' class='display dataTable'>
+   						<thead>
+       						<tr>
+                             <th>heading</th>
+                             <th>timing details</th>
+                             <th>details</th>
+                             <th>Photo</th>
+                             <th>Edit</th>
+                             <th>Delete</th>
+       						</tr>
+   						</thead>
+					</table>
+				</div>
 			</div>
-		</div>
+
+						
 	</div>
+
+
+	<script type="text/javascript">
+     $(document).ready(function(){
+
+        $('#empTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':'<?= base_url('Pagination_events/empList'); ?>'
+          },
+          'columns': [
+             { data: 'heading' },
+             { data: 'timing_details' },
+             { data: 'details' },
+             { data: 'photo' },
+             { data: 'Edit' },
+             { data: 'Delete' }
+          
+          ]
+        });
+     });
+     </script>
+
 
 	<script src="http://localhost/Student_Management/assets/js/index.js"></script>
 </body>
