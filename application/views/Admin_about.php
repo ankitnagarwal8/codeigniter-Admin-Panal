@@ -134,7 +134,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Events</a>
+							<a href="<?= base_url('events_admin');?>">Events</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
