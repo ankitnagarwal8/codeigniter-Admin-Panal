@@ -66,6 +66,12 @@ class Landing_home extends CI_Controller {
 		$this->load->view('contact.php',$data);
 	}
 	public function pricing(){
+		$this->load->model('Pricing_data');
+		$data['res'] = $this->Pricing_data->index();
+
+		$this->load->model('Pricing_data');
+		$data['ressult990'] = $this->Pricing_data->part2();
+
 		$data['results9090'] = $this->contact->index();
 		$this->load->view('pricing.php',$data);
 	}
