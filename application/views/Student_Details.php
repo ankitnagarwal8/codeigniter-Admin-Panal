@@ -152,7 +152,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Pricing</a>
+							<a href="<?= base_url('Pricing_admin');?>">Pricing</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">

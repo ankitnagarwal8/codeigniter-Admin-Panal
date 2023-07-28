@@ -5,7 +5,9 @@ class Pricing_admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Pricing_admin');
+    $this->load->model('Pricing_data');
+    $data['results'] = $this->Pricing_data->index();
+		$this->load->view('Pricing_admin',$data);
 	}
 	public function Pricing_part1(){
 		$heading = $this->input->post('heading');
@@ -19,7 +21,7 @@ class Pricing_admin extends CI_Controller {
 		$query = $this->db->update('Pricing_part_frist',$Arr);
 
 		if($query){
-			$this->load->view('Pricing_admin');
+			$this->index();
 		}
 	}
 
@@ -42,7 +44,7 @@ class Pricing_admin extends CI_Controller {
        $q=$this->Delete_pricing->delete_data($id);
        if($q==true){
          
-            $this->load->view('Pricing_admin');
+            $this->index();
     }
       else{
         echo "Error!";
@@ -74,7 +76,7 @@ class Pricing_admin extends CI_Controller {
    		$this->load->database();
    		$query = $this->db->insert('pricing_part_second',$Arr);
    		if($query){
-   			$this->load->view('Pricing_admin');
+   			$this->index();
    		}
    }
    public function edit_data($id){
@@ -114,7 +116,7 @@ class Pricing_admin extends CI_Controller {
    		$this->db->where('id',$id);
    		$query = $this->db->update('pricing_part_second',$Arr);
    		if($query){
-   			$this->load->view('Pricing_admin');
+   			$this->index();
    		}
    }
 }

@@ -5,7 +5,9 @@ class Admin_courses extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Admin_course');
+        $this->load->model('course_data');
+        $data['results'] = $this->course_data->index();
+		$this->load->view('Admin_course',$data);
 	}
 	public function course_part1(){
 		$heading = $this->input->post('frist_h1');

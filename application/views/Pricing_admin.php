@@ -234,11 +234,15 @@
 			<div class="head">
 				<h1>Pricing Part 1</h1>
 			</div>
+			<?php foreach($results as $result): ?>
 			<form method="post" action="<?= base_url('Pricing_admin/Pricing_part1');?>" enctype="multipart/form-data">
-					<input type="text" name="heading" placeholder="Heading"><br>
-					<input type="text" name="paragraph" placeholder="paragraph"><br>
+					<input type="text" name="heading" value="<?php echo $result['heading']; ?>" placeholder="Heading"><br>
+					<!-- <input type="text" name="paragraph" placeholder="paragraph"> -->
+					<textarea name="paragraph"><?php echo $result['paragraph']; ?></textarea>
+					<br>
 					<button>submit</button>
 			</form>
+		<?php endforeach; ?>
 			<br>
 			<br>
 

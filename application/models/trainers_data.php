@@ -6,10 +6,10 @@ class trainers_data extends CI_Model
 		    $this->load->database();
 			$this->db->select('*');
 			$this->db->from("admin_traner");
-			$data=$this->db->get()->result_array();
+			$q=$this->db->get()->result_array();
 		
 	
-		return $data;
+		return $q;
 	}
 	function trainers_part2(){
 

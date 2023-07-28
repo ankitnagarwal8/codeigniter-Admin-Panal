@@ -5,7 +5,11 @@ class admin_About extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Admin_about');
+		$this->load->model('about_data');
+		$data['results'] = $this->about_data->index();
+		$data['results2'] = $this->about_data->about_data_part2();
+
+		$this->load->view('Admin_about',$data);
 	}
 	public function About_part1(){
 		$text = $this->input->post('frist_h1');
@@ -19,7 +23,7 @@ class admin_About extends CI_Controller {
         $update=$this->db->update('about_part_1', $updateArr);
 
          if($update){
-            $this->load->view('Admin_about'); 
+            $this->index(); 
          }else{
            echo "data not updated";
         }
@@ -44,7 +48,7 @@ class admin_About extends CI_Controller {
         $update=$this->db->update('about_part_2', $updateArr);
 
          if($update){
-            $this->load->view('Admin_about'); 
+            $this->index();  
          }else{
            echo "data not updated";
         }

@@ -4,7 +4,11 @@ class home extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('Admin_home');
+        $this->load->model('Admin_home_data');
+        $data['results'] = $this->Admin_home_data->homepartfrist();
+        $data['results2'] = $this->Admin_home_data->homepartsecond();
+        $data['results3'] = $this->Admin_home_data->homepartthird();
+        $this->load->view('Admin_home',$data);
     }
     public function changeimg(){
         
@@ -54,7 +58,8 @@ class home extends CI_Controller {
 
 
                 if($update){
-                    $this->load->view('Admin_home');
+                    
+                    $this->index();
                    
                 }else{
                     echo "data not updated";
@@ -117,7 +122,7 @@ class home extends CI_Controller {
 
 
                 if($update){
-                    $this->load->view('Admin_home');
+                     $this->index();
                    
                 }else{
                     echo "data not updated";
@@ -151,7 +156,7 @@ class home extends CI_Controller {
         $update=$this->db->update('home_part_3', $updateArr);
 
          if($update){
-            $this->load->view('Admin_home'); 
+             $this->index(); 
          }else{
            echo "data not updated";
         }

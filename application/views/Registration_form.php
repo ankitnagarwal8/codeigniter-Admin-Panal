@@ -2,8 +2,42 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<?= base_url('../assets/css/Reg_style.css')?>">
 	<title>Form validation (IT SOURCECODE)</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+			font-family: "Times New Roman", Times, serif;
+			background-color: #24F7BD;
+		}
+		form{
+			padding:2rem;
+			text-align: center;
+		}
+		tr td h1{
+			font-size: 4rem;
+		}
+		tr td{
+			font-size: 1.5rem;
+		}
+		tr td input{
+			width:100%;
+			height:1.5rem;
+			border-radius: 5px;
+			border:none;
+			background-color: lightcyan;
+		}
+		.td_frist{
+			display:flex;
+		}
+		p{
+			text-align: center;
+			font-size: 1rem;
+			color: blue;
+		}
+
+
+	</style>
 </head>
 <body>
 		<div class="container">
@@ -13,7 +47,7 @@
 
 					<tr class="form-control">
 						<td colspan=2>
-							<h2>Student Registration Form</h2>
+							<h1>Student Registration Form</h1>
 						</td>
 					</tr>
 
@@ -39,7 +73,7 @@
 
 					<tr>
 						<td>Sex</td>
-						<td><input type="radio" name="sex" value="male" size="10">Male
+						<td class="td_frist"><input type="radio" name="sex" value="male" size="10">Male
 						<input type="radio" name="sex" value="Female" size="10">Female</td>
 					</tr>
 

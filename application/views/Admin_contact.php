@@ -177,52 +177,52 @@
 		</div>
 		<div class="main">
 
- 
+ 		<?php foreach($results as $result): ?>
 			<form method="post" action="<?= base_url('Admin_contact/contact_part1');?>" enctype="multipart/form-data">
 
 			<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="heading" class="form-control" placeholder = "heading" value="" aria-label="First name">
+   						 <input type="text" name="heading" class="form-control" placeholder = "heading"  aria-label="First name" value="<?php echo $result['heading']; ?>">
   					</div>
   					<div class="col">
-    					<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="First name">
+    					<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="First name" value="<?php echo $result['paragraph']; ?>">
   					</div>
 				  </div>
 				  
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="email_id" class="form-control" placeholder="email_id" aria-label="First name">
+   						 <input type="text" name="email_id" class="form-control" placeholder="email_id" aria-label="First name" value="<?php echo $result['email_id']; ?>">
   					</div>
   					<div class="col">
-    					<input type="text" name="email" class="form-control" placeholder="email" aria-label="First name">
-  					</div>
-  				</div>
-
-  				<div class="row form_feilds" style="display: flex;" >
-  					<div class="col">
-   						 <input type="text" name="phone" class="form-control" placeholder="phone" aria-label="First name">
-  					</div>
-  					<div class="col">
-    					<input type="text" name="phone_number" class="form-control" placeholder="phone_number" aria-label="First name">
+    					<input type="text" name="email" class="form-control" placeholder="email" aria-label="First name" value="<?php echo $result['email']; ?>">
   					</div>
   				</div>
 
   				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="location_name" class="form-control" placeholder="location_name" aria-label="First name">
+   						 <input type="text" name="phone" class="form-control" placeholder="phone" aria-label="First name" value="<?php echo $result['phone']; ?>">
   					</div>
   					<div class="col">
-    					<input type="text" name="full_address" class="form-control" placeholder="full_address" aria-label="First name">
+    					<input type="text" name="phone_number" class="form-control" placeholder="phone_number" aria-label="First name" value="<?php echo $result['phone_number']; ?>">
   					</div>
   				</div>
 
   				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="title" class="form-control" placeholder="title" aria-label="First name">
+   						 <input type="text" name="location_name" class="form-control" placeholder="location_name" aria-label="First name" value="<?php echo $result['location_name']; ?>">
   					</div>
   					<div class="col">
-    					<textarea name="title_paragraph"></textarea>
+    					<input type="text" name="full_address" class="form-control" placeholder="full_address" aria-label="First name" value="<?php echo $result['address']; ?>">
+  					</div>
+  				</div>
+
+  				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="title" class="form-control" placeholder="title" aria-label="First name" value="<?php echo $result['title']; ?>">
+  					</div>
+  					<div class="col">
+    					<textarea name="title_paragraph"><?php echo $result['title_paragraph']; ?></textarea>
   					</div>
   				</div>
 				
@@ -237,7 +237,7 @@
 			 </form>
 		</div>
 	</div>
-
+<?php endforeach; ?>
 
 	<script src="http://localhost/Student_Management/assets/js/index.js"></script>
 </body>

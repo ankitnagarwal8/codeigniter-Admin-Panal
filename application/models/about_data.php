@@ -11,6 +11,7 @@ class about_data extends CI_Model
 	
 		return $data;
 	}
+	
 	function about_data_part2(){
 		$this->load->database();
 		$this->db->select('*');

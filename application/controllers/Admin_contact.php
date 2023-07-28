@@ -5,8 +5,9 @@ class Admin_contact extends CI_Controller {
 
 	public function index()
 	{
-		
-		$this->load->view('Admin_contact');
+		$this->load->model('contact');
+		$data['results'] = $this->contact->index();
+		$this->load->view('Admin_contact',$data);
 	}
 	public function contact_part1(){
 		$heading = $this->input->post('heading');
@@ -38,7 +39,7 @@ class Admin_contact extends CI_Controller {
 		$update =$this->db->update('contact',$updateArr);
 
 		if($update){
-			return $this->load->view('Admin_contact');
+			$this->index();
 		}else{
 			echo "data not updated";
 		}

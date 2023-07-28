@@ -55,7 +55,7 @@ foreach($ressult990 as $ressult99):
                 <li><?php echo $ressult99['s_fifth']; ?></li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy now</a>
+                <a href="" class="btn-buy">Buy now</a>
               </div>
             </div>
           </div>

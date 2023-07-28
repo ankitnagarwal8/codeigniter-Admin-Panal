@@ -149,13 +149,13 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Pricing</a>
+							<a href="<?= base_url('Pricing_admin');?>">Pricing</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Contact</a>
+							<a href="<?= base_url('Admin_contact')?>">Contact</a>
 						</h3>
 					</div>
 
@@ -185,7 +185,7 @@
 			</nav>
 		</div>
 		<div class="main">
-
+			<?php foreach($results as $result): ?>
 
 			<div class="home_section" >
 				<div class="home">
@@ -195,10 +195,10 @@
 				<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col cloumn_feild">
-   						 <input type="text" name="frist_h1" class="form-control" placeholder="frist_h1" aria-label="First name">
+   						 <input type="text" name="frist_h1" value="<?php echo $result['heading'] ?>" class="form-control" placeholder="frist_h1" aria-label="First name">
   					</div>
   					<div class="col cloumn_feild">
-    					<textarea name = "text_area"></textarea>
+    					<textarea name = "text_area"><?php echo $result['paragraph'] ?> </textarea>
   					</div>
 				  </div>
 				 
@@ -210,7 +210,7 @@
 				 </div>
 				</form>
 			 </div>
-
+			<?php endforeach; ?>
 			 <div class="home_section" >
 				<div class="home">
 				<h1>course Part 2</h1>

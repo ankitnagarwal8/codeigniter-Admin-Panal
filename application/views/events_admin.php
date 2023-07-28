@@ -52,6 +52,23 @@
 			background-color: #8989ff;
 			color:#fefefe;
 		}
+		.add_button{
+			margin:0;
+			padding: 0;
+			width:100%;
+			height:auto;
+			text-align: center;
+			background-color: #dddddd;
+		}
+		.add_button button{
+			height:3rem;
+			width:6rem;
+			font-size: 2rem;
+			margin-left: 50rem;
+			margin-bottom: 2rem;
+			
+		}
+
 
 	</style>
 	
@@ -131,7 +148,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Pricing</a>
+							<a href="<?= base_url('Pricing_admin');?>">Pricing</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
@@ -166,22 +183,25 @@
 				</div>
 			</nav>
 		</div>
+		<?php foreach($results as $result): ?>
 		<div class="main">
 			<div class="head">events part 1</div>
 				<div class="body">
 					<form method="post" action="<?= base_url('events_admin/Edit_Part_frist'); ?>" enctype="multipart/form-data">
 
-						<input type="text" name="heading" name="heading" placeholder="heading"><br>
+						<input type="text" name="heading" value="<?php  echo $result['heading'];?>" name="heading" placeholder="heading"><br>
 
-						<input type="text" name="paragraph" placeholder="paragraph"></br>
+						<input type="text" name="paragraph" value="<?php  echo $result['paragraph'];?>" placeholder="paragraph"></br>
 
 						<button type="submit">update</button>
 					</form>
-				</div>			
+				</div>	
+				<?php endforeach; ?>		
 				<br>
 				<br>
 				<br>
 			<div class="head">events part 2</div>
+			<div class="add_button"><button>Add</button></div>
 				<div class="body">
 					<table id='empTable' class='display dataTable'>
    						<thead>

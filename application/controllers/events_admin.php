@@ -5,7 +5,9 @@ class events_admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('events_admin');
+        $this->load->model('events_data');
+        $data['results'] = $this->events_data->index();
+		$this->load->view('events_admin',$data);
 	}
 	public function Edit_Part_frist(){
 		$heading = $this->input->post('heading');

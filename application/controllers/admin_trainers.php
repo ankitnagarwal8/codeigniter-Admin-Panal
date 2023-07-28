@@ -6,7 +6,9 @@ class admin_trainers extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Admin_trainer');
+		$this->load->model('trainers_data');
+		$data['results'] = $this->trainers_data->index();
+		$this->load->view('Admin_trainer',$data);
 	}
 	public function trainer_part_frist(){
 		$heading = $this->input->post('frist_h1');
@@ -20,7 +22,7 @@ class admin_trainers extends CI_Controller {
         $update=$this->db->update('admin_traner', $updateArr);
 
          if($update){
-            $this->load->view('Admin_trainer'); 
+            $this->index();
          }else{
            echo "data not updated";
         }

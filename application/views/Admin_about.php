@@ -175,19 +175,21 @@
 		<div class="main">
 			<div class="home_section" >
 				<div class="home">
-				<h1>About Part 2</h1>
+				<h1>About Part 1</h1>
 				</div>
 				<form method="post" action="<?= base_url('admin_About/About_part1');?>" enctype="multipart/form-data">
-
+				<?php  
+				foreach($results as $result):
+				?>	
 					
 				 
 				<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="frist_h1" class="form-control" placeholder="frist_h1" aria-label="First name">
+   						 <input type="text" name="frist_h1" value="<?php echo $result['text']; ?>" class="form-control" placeholder="frist_h1" aria-label="First name">
   					</div>
   					<div class="col">
-    					<textarea name = "text_area"></textarea>
+    					<textarea name = "text_area"><?php echo $result['text_box']; ?></textarea>
   					</div>
 				  </div>
 				 
@@ -199,38 +201,38 @@
 				 </div>
 				</form>
 			 </div>
-
+<?php  endforeach;?>
 
 			 <div class="home_section" >
 				<div class="home">
-				<h1>About Part 3</h1>
+				<h1>About Part 2</h1>
 				</div>
 				<form method="post" action="<?= base_url('admin_About/About_part2');?>" enctype="multipart/form-data">
-
+<?php foreach($results2 as $result2): ?>
 					
 				 
 				<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="heading_forth" class="form-control" placeholder="heading_forth" aria-label="First name">
+   						 <input type="text" name="heading_forth" value="<?php echo $result2['heading_forth'] ?>" class="form-control" placeholder="heading_forth" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="heading_frist" class="form-control" placeholder="heading_frist" aria-label="First name">
+    					<input type="text" name="heading_frist" value="<?php echo $result2['heading_frist'] ?>" class="form-control" placeholder="heading_frist" aria-label="First name">
   					</div>
 				  </div>
 				  
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="name" class="form-control" placeholder="name" aria-label="First name">
+   						 <input type="text" name="name" value="<?php echo $result2['name']; ?>" class="form-control" placeholder="name" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="post" class="form-control" placeholder="post" aria-label="First name">
+    					<input type="text" name="post" value="<?php echo $result2['post']; ?>" class="form-control" placeholder="post" aria-label="First name">
   					</div>
   				</div>
 				
 				  <div class="row form_feilds"  style="display: flex;" >
 				  	<div class="col">
-    					<textarea name="text_area"></textarea>
+    					<textarea name="text_area"><?php echo $result2['saying	']; ?></textarea>
   					</div>
   					<div class="col">
    						 <button type="submit">update</button>
@@ -240,7 +242,7 @@
 				</form>
 			 </div>
 
-			 
+		<?php endforeach;?>	 
 
 
 

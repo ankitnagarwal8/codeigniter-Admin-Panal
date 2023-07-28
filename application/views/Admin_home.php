@@ -48,6 +48,10 @@
           	text-align: center;
           	width: 50%;
           }
+          textarea{
+          	margin-left: 3rem;
+          	padding: 1rem;
+          }
 
 
 
@@ -129,7 +133,7 @@
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
 						<h3>
-							<a href="#">Pricing</a>
+							<a href="<?= base_url('Pricing_admin');?>">Pricing</a>
 						</h3>
 					</div>
 					<div class="nav-option option3">
@@ -161,6 +165,10 @@
 				</div>
 			</nav>
 		</div>
+		<?php
+		foreach($results as $result):
+
+		?>
 		<div class="main">
 			<div class="home_section" >
 				<div class="home">
@@ -173,15 +181,16 @@
 				<div class="home_form">
 				  <div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="frist_h1" class="form-control" placeholder="frist_h1" aria-label="First name">
+   						 <input type="text" name="frist_h1" value="<?php echo $result['heading_frist']; ?>" class="form-control" placeholder="frist_h1" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="frist_h2" class="form-control" placeholder="frist_h2" aria-label="Last name">
+    					<input type="text" name="frist_h2" value="<?php echo $result['heading_second']; ?>" class="form-control" placeholder="frist_h2" aria-label="Last name">
   					</div>
 				  </div>
 				  <div class="row form_feilds"  style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="paragraph_h2" class="form-control" placeholder="paragraph_h2" aria-label="First name">
+   						 <!-- <input type="text" name="paragraph_h2" class="form-control" value="" placeholder="paragraph_h2" aria-label="First name"> -->
+   						 <textarea name="paragraph_h2"><?php echo $result['text']; ?></textarea>
   					</div>
   					<div class="col">
     					<input type="file" name="image" class="form-control" aria-label="Last name">
@@ -196,9 +205,11 @@
 				 </div>
 				</form>
 			 </div>
-
+			<?php endforeach;  ?>
 			 <!-- part2 -->
-
+			 <?php
+			 foreach($results2 as $result2):
+			 ?>
 			 <div class="home_section">
 				<div class="home">
 				<h1>Home part 2</h1>
@@ -208,26 +219,28 @@
 				<div class="home_form">
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="frist_h1" class="form-control" placeholder="heading" aria-label="First name">
+   						 <input type="text" value="<?php echo $result2['heading'];?>" name="frist_h1" class="form-control" placeholder="heading" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="p1" class="form-control" placeholder="paragraph1" aria-label="Last name">
-  					</div>
-				</div>
-				<div class="row form_feilds" style="display: flex;" >
-  					<div class="col">
-   						 <input type="text" name="list1" class="form-control" placeholder="list1" aria-label="First name">
-  					</div>
-  					<div class="col">
-    					<input type="text" name="list2" class="form-control" placeholder="list2" aria-label="Last name">
+    					<!-- <input type="text" name="p1" value="" class="form-control" placeholder="paragraph1" aria-label="Last name"> -->
+    					<textarea name="p1"><?php echo $result2['paragraph_frist'];?></textarea>
   					</div>
 				</div>
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="list3" class="form-control" placeholder="list3" aria-label="First name">
+   						 <input type="text" name="list1" value="<?php echo $result2['list_frist'];?>" class="form-control" placeholder="list1" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="p2" class="form-control" placeholder="paragraph2" aria-label="Last name">
+    					<input type="text" name="list2" value="<?php echo $result2['list_second'];?>" class="form-control" placeholder="list2" aria-label="Last name">
+  					</div>
+				</div>
+				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" name="list3" value="<?php echo $result2['list_third'];?>" class="form-control" placeholder="list3" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<!-- <input type="text" name="p2" class="form-control" placeholder="paragraph2" value="" aria-label="Last name"> -->
+    					<textarea name="p2"><?php echo $result2['paragraph_second'];?></textarea>
   					</div>
 				</div>
 				<div class="row form_feilds" style="display: flex;" >
@@ -241,11 +254,13 @@
 			</div>
 		</form>
 			</div>
-
+		<?php endforeach; ?>
 			<!-- end part 2 -->
 
 			<!-- part 3 -->
-
+			<?php
+			foreach($results3 as $result3):
+			?>
 
 			 <div class="home_section">
 				<div class="home">
@@ -256,34 +271,38 @@
 				<div class="home_form">
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="heading_frist" class="form-control" placeholder="heading_frist" aria-label="First name">
+   						 <input type="text" name="heading_frist" class="form-control" value="<?php echo $result3['heading_frist'];?>" placeholder="heading_frist" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="Last name">
-  					</div>
-				</div>
-				<div class="row form_feilds" style="display: flex;" >
-  					<div class="col">
-   						 <input type="text" name="servies_frist_heading" class="form-control" placeholder="servies_frist_heading" aria-label="First name">
-  					</div>
-  					<div class="col">
-    					<input type="text" name="servies_frist_paragraph" class="form-control" placeholder="servies_frist_paragraph" aria-label="Last name">
+    					<!-- <input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="Last name"> -->
+    					<textarea name="paragraph_frist"><?php echo $result3['paragraph_frist']; ?></textarea>
   					</div>
 				</div>
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="servies_second_heading" class="form-control" placeholder="servies_second_heading" aria-label="First name">
+   						 <input type="text" name="servies_frist_heading" class="form-control" value="<?php echo $result3['servies_frist_heading'];?>" placeholder="servies_frist_heading" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="servies_second_paragraph" class="form-control" placeholder="servies_second_paragraph" aria-label="Last name">
+    					<!-- <input type="text" name="servies_frist_paragraph" class="form-control" placeholder="servies_frist_paragraph" aria-label="Last name"> -->
+    					<textarea name="servies_frist_paragraph"><?php echo $result3['servies_frist_paragraph']; ?></textarea>
   					</div>
 				</div>
 				<div class="row form_feilds" style="display: flex;" >
   					<div class="col">
-   						 <input type="text" name="servies_third_heading" class="form-control" placeholder="servies_third_heading" aria-label="First name">
+   						 <input type="text" value="<?php echo $result3['servies_second_heading'];?>" name="servies_second_heading" class="form-control" placeholder="servies_second_heading" aria-label="First name">
   					</div>
   					<div class="col">
-    					<input type="text" name="servies_third_paragraph" class="form-control" placeholder="servies_third_paragraph" aria-label="Last name">
+    					<!-- <input type="text" name="servies_second_paragraph" class="form-control" placeholder="servies_second_paragraph" aria-label="Last name"> -->
+    					<textarea name="servies_second_paragraph"><?php echo $result3['servies_second_paragraph']; ?></textarea>
+  					</div>
+				</div>
+				<div class="row form_feilds" style="display: flex;" >
+  					<div class="col">
+   						 <input type="text" value="<?php echo $result3['servies_third_heading'];?>" name="servies_third_heading" class="form-control" placeholder="servies_third_heading" aria-label="First name">
+  					</div>
+  					<div class="col">
+    					<!-- <input type="text" name="servies_third_paragraph" class="form-control" placeholder="servies_third_paragraph" aria-label="Last name"> -->
+    					<textarea name="servies_third_paragraph"><?php echo $result3['servies_third_paragraph']; ?></textarea>
   					</div>
 				</div>
 				<div class="row form_feilds" style="display: flex;" >
@@ -294,67 +313,7 @@
 			</div>
 			</form>
 			</div>
-
-			<!-- end part 3 -->
-
-			<!-- part4 -->
-
-			<!-- <div class="home_section">
-				<div class="home">
-					<h1>Home part 3</h1>
-				</div>
-				<form method="post" action="" enctype="multipart/form-data">
-
-					<div class="home_form">
-						<div class="row form_feilds" style="display: flex;" >
-  							<div class="col">
-   						 		<input type="text" name="heading_frist" class="form-control" placeholder="heading_frist" aria-label="First name">
-  							</div>
-  							<div class="col">
-    							<input type="text" name="paragraph_frist" class="form-control" placeholder="paragraph_frist" aria-label="Last name">
-  							</div>
-						</div>
-						<div class="row form_feilds" style="display: flex;" >
-  							<div class="col">
-   						 		<input type="text" name="servies_frist_heading" class="form-control" placeholder="servies_frist_heading" aria-label="First name">
-  							</div>
-  							<div class="col">
-    							<input type="text" name="servies_frist_paragraph" class="form-control" placeholder="servies_frist_paragraph" aria-label="Last name">
-  							</div>
-						</div>
-						<div class="row form_feilds" style="display: flex;" >
-  							<div class="col">
-   						 		<input type="text" name="servies_second_heading" class="form-control" placeholder="servies_second_heading" aria-label="First name">
-  							</div>
-  							<div class="col">
-    							<input type="text" name="servies_second_paragraph" class="form-control" placeholder="servies_second_paragraph" aria-label="Last name">
-  							</div>
-						</div>
-						<div class="row form_feilds" style="display: flex;" >
-  							<div class="col">
-   						 		<input type="text" name="servies_third_heading" class="form-control" placeholder="servies_third_heading" aria-label="First name">
-  							</div>
-  							<div class="col">
-    							<input type="text" name="servies_third_paragraph" class="form-control" placeholder="servies_third_paragraph" aria-label="Last name">
-  							</div>
-						</div>
-						<div class="row form_feilds" style="display: flex;" >
-  				  			<div class="col">
-    							<button type="submit">update</button>
-  							</div>
-						</div>
-					</div>
-				</form>
-			</div> -->
-			
-  
-
-
-
-
-
-
-
+		<?php endforeach; ?>
 
 			</div>
 		</div>
