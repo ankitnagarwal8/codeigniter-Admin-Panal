@@ -8,6 +8,10 @@ class admin_trainers extends CI_Controller {
 	{
 		$this->load->model('trainers_data');
 		$data['results'] = $this->trainers_data->index();
+
+		$this->load->model('site_data');
+    $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('Admin_trainer',$data);
 	}
 	public function trainer_part_frist(){

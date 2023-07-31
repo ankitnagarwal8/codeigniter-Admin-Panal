@@ -7,6 +7,10 @@ class Pricing_admin extends CI_Controller {
 	{
     $this->load->model('Pricing_data');
     $data['results'] = $this->Pricing_data->index();
+
+     $this->load->model('site_data');
+     $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('Pricing_admin',$data);
 	}
 	public function Pricing_part1(){

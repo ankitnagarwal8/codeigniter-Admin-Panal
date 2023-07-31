@@ -42,8 +42,24 @@ class Login extends CI_Controller {
                         );  
 
                     $this->session->set_userdata($newdata);
-                      /*$this->load->controller('Admin_Details');*/
-                     $this->load->view('Admin');
+
+                    $this->load->model('Basic_Data');
+                    $countalldata['data'] = $this->Basic_Data->record_count();
+
+
+                    $this->load->model('Basic_Data');
+                    $countalldata['data2'] = $this->Basic_Data->record_count_teacher();
+
+                    $this->load->model('Basic_Data');
+                    $countalldata['data3'] = $this->Basic_Data->record_count_course();
+
+                    $this->load->model('site_data');
+
+                    $countalldata['datas4'] = $this->site_data->index();
+
+
+
+                    $this->load->view('Admin',$countalldata);
                       
                    }
 		                 else{
@@ -67,9 +83,14 @@ class Login extends CI_Controller {
                            -> row()
                            ->id;
                 $this->load->model('Admin_data');
-                $results = $this->Admin_data->index($id);
+                $results['results'] = $this->Admin_data->index($id);
 
-                $this->load->view('Admin_Details',compact("results"));
+
+
+                $this->load->model('site_data');
+                $results['datas4'] = $this->site_data->index();
+
+                $this->load->view('Admin_Details',$results);
 
 
         }

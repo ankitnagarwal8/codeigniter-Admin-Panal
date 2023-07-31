@@ -13,8 +13,10 @@ class Pagination extends CI_Controller {
    }
 
     public function index(){
+       $this->load->model('site_data');
 
-     $this->load->view('Student_Details');
+      $countalldata['datas4'] = $this->site_data->index();
+     $this->load->view('Student_Details',$countalldata);
 
 
 

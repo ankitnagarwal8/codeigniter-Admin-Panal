@@ -7,6 +7,10 @@ class Admin_courses extends CI_Controller {
 	{
         $this->load->model('course_data');
         $data['results'] = $this->course_data->index();
+
+        $this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('Admin_course',$data);
 	}
 	public function course_part1(){

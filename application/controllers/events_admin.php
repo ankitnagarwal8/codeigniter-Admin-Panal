@@ -7,6 +7,10 @@ class events_admin extends CI_Controller {
 	{
         $this->load->model('events_data');
         $data['results'] = $this->events_data->index();
+
+        $this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('events_admin',$data);
 	}
 	public function Edit_Part_frist(){

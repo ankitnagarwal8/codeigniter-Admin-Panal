@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Teacher extends CI_Controller {
 
 	public function index(){
-		$this->load->view('Teacheres_Datails');
+        $this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+		$this->load->view('Teacheres_Datails',$data);
 	}
 	public function Registration(){
 		$this->load->view('Add_Teacher_Details');

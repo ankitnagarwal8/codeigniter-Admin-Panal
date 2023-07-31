@@ -9,6 +9,9 @@ class admin_About extends CI_Controller {
 		$data['results'] = $this->about_data->index();
 		$data['results2'] = $this->about_data->about_data_part2();
 
+		$this->load->model('site_data');
+		$data['datas4'] = $this->site_data->index();
+
 		$this->load->view('Admin_about',$data);
 	}
 	public function About_part1(){

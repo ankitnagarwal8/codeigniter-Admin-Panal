@@ -7,6 +7,10 @@ class Admin_contact extends CI_Controller {
 	{
 		$this->load->model('contact');
 		$data['results'] = $this->contact->index();
+
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('Admin_contact',$data);
 	}
 	public function contact_part1(){

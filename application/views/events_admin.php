@@ -78,12 +78,12 @@
 
 	
 	<header>
-
+		<?php foreach($datas4 as $data4): ?>
 		<div class="logosec">
-			<div class="logo">W3School</div>
+			<div class="logo"><?php echo $data4['site_name']; ?></div>
 			<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png" class="icn menuicn" id="menuicn" alt="menu-icon">
 		</div>
-
+	<?php endforeach;?>
 		<div class="searchbar">
 			<input type="text" placeholder="Search">
 			<div class="searchbtn">
@@ -172,7 +172,7 @@
 
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
-						<h3><a href="">Settings</a></h3>
+						<h3><a href="<?= base_url("Admin_site_name/index"); ?>">Site_name</a></h3>
 					</div>
 
 					<div class="nav-option logout">

@@ -83,9 +83,12 @@ class Admin_Details extends CI_Controller {
 
             if($res){
                 $this->load->model('Admin_data');
-
                 $results = $this->Admin_data->get_admin_data($id);
                 $data["results"] = $results;
+
+                $this->load->model('site_data');
+                $data['datas4'] = $this->site_data->index();
+
                 $this->load->view('Admin_Details', $data);
             }else{
                 echo "data not updated";
