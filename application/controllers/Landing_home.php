@@ -19,6 +19,11 @@ class Landing_home extends CI_Controller {
 
 		$this->load->model('course_data');
         $data['results24'] = $this->course_data->part2();
+
+        
+        $this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
      	$data['results9090'] = $this->contact->index();
         $this->load->view('index',$data);
 	}
@@ -29,6 +34,9 @@ class Landing_home extends CI_Controller {
         $data['results'] = $this->about_data->index();
         $data['results3'] = $this->about_data->about_data_part2();
 
+        $this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('about.php',$data);
 	}
 	public function course(){
@@ -38,10 +46,17 @@ class Landing_home extends CI_Controller {
 
 		$data['results24'] = $this->course_data->part2();
 
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('courses.php',$data);
 	}
 	public function events(){
 		
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
+
 		$this->load->model('events_data');
 		$data['events_details'] = $this->events_data->index();
 
@@ -58,11 +73,18 @@ class Landing_home extends CI_Controller {
 		$data['results'] = $this->trainers_data->index();
 		$data['results2'] = $this->trainers_data->trainers_part2();
 
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('trainers.php',$data);
 	}
 	public function contact(){
 		$this->load->model('contact');
 		$data['results9090'] = $this->contact->index();
+
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('contact.php',$data);
 	}
 	public function pricing(){
@@ -73,13 +95,27 @@ class Landing_home extends CI_Controller {
 		$data['ressult990'] = $this->Pricing_data->part2();
 
 		$data['results9090'] = $this->contact->index();
+
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
 		$this->load->view('pricing.php',$data);
 	}
 	public function course_details(){
+
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+
+
 		$data['results9090'] = $this->contact->index();
 		$this->load->view('course_details.php');
+
+
 	}
 	public function footer(){
+		$this->load->model('site_data');
+        $data['datas4'] = $this->site_data->index();
+		
 		$this->load->model('contact');
 		$data['results9090'] = $this->contact->index();
 

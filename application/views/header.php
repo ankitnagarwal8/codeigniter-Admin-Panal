@@ -1,7 +1,8 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="<?= base_url('Landing_home'); ?>">Nagarwal</a></h1>
+      <?php foreach($datas4 as $data4): ?>
+      <h1 class="logo me-auto"><a href="<?= base_url('Landing_home'); ?>"><?php echo $data4['site_name']; ?></a></h1>
+    <?php endforeach; ?>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

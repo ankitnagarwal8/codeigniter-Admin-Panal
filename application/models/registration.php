@@ -20,17 +20,14 @@
 					 "photo"=> $data['image_metadata']['file_name']
             );
             
-        $response=  $this->db->insert('students_data',$insertArr);
+        $response = $this->db->insert('students_data',$insertArr);
+
 			if($response)
 			{
-
-        			$this->load->view("index");	
-					
+				return true;					
+			}else{
+				return false;
 			}
-			else
-				{
-        			echo "Query failed!";
-  			}
 		}
 	}
 

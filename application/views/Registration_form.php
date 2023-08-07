@@ -3,6 +3,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form validation (IT SOURCECODE)</title>
+
 	<style>
 		*{
 			margin:0;
@@ -40,7 +41,14 @@
 	</style>
 </head>
 <body>
+	
 		<div class="container">
+			<?php if($this->session->flashdata('message')){?>
+  				<div class="alert alert-success" role="alert">      
+    				<?php echo $this->session->flashdata('message')?>
+  				</div>
+		<?php } ?>
+		</div>
 			<form action="<?= base_url('Student/signup');?>"enctype="multipart/form-data" method="post">
 
 				<table cellpadding="2" width="90%" align="center" cellspacing="2">

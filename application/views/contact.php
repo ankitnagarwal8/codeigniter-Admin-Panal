@@ -66,7 +66,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="<?php base_url('Email_controller\send_mail'); ?>" method="post" role="form" class="php-email-form">
+            <form action="<?= base_url('Email_controller\send_mail'); ?>" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -82,8 +82,12 @@
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
+
                 <div class="loading">Loading</div>
-                <div class="error-message"></div>
+                <div class="error-message">       <?php 
+         echo $this->session->flashdata('email_sent'); 
+         echo form_open('/Email_controller/send_mail'); 
+      ?></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>

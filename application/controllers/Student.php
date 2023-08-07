@@ -44,7 +44,15 @@ class Student extends CI_Controller {
             	'image_metadata' => $this->upload->data()
             );
 				  $this->load->model("registration");
-                  $this->registration->reg($name,$fname,$DOB,$add,$sex,$course,$city,$district,$state,$pin,$email,$mnum,$data);
+                  $insert_data = $this->registration->reg($name,$fname,$DOB,$add,$sex,$course,$city,$district,$state,$pin,$email,$mnum,$data);
+
+                  $this->session->set_flashdata('message', 'Successfully Added.');
+                  	
+                  if($insert_data === true){
+                  	$this->Registration();
+                  }else{
+                  	echo "data not inserted!";
+                  }
            
 
             
