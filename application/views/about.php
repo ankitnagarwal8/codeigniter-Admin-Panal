@@ -20,7 +20,7 @@
 foreach ($results as $result):
 
  ?>
-    <div class="breadcrumbs" data-aos="fade-in">
+    <div class="breadcrumbs" >
       <div class="container">
         <h2><?php echo $result['text']; ?></h2>
         <p><?php echo $result['text_box']; ?></p>
@@ -37,10 +37,10 @@ foreach ($results2 as $result2):
  ?>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <div class="col-lg-6 order-1 order-lg-2" >
             <img src="<?= base_url("../photos/".$result2['image']) ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -71,14 +71,14 @@ foreach ($results3 as $result3):
  ?>
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="section-title">
           <h2><?php echo $result3['heading_forth']; ?></h2>
           <p><?php echo $result3['heading_frist']; ?></p>
         </div>
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">

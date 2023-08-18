@@ -10,13 +10,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
   <?php include('links.php'); ?>
-  <!-- =======================================================
-  * Template Name: Mentor
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -30,7 +24,7 @@ foreach ($results as $result):
   
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-content-center align-items-center" style="background: url('<?= base_url("../photos/".$result['bgimg']) ?>') top center;">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+    <div class="container position-relative">
       <h1><?php echo $result['heading_frist']; ?><br><?php echo $result['heading_second']; ?></h1>
       <h2><?php echo $result['text']; ?></h2>
       <a href="<?= base_url('Landing_home/course')?>" class="btn-get-started">Get Started</a>
@@ -42,14 +36,13 @@ foreach ($results as $result):
 <?php 
 
 foreach ($results2 as $result2):
-
  ?>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <div class="col-lg-6 order-1 order-lg-2" >
             <img src="<?= base_url("../photos/".$result2['image']) ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -72,44 +65,14 @@ foreach ($results2 as $result2):
       </div>
     </section><!-- End About Section -->
 <?php endforeach; ?>
-    <!-- ======= Counts Section ======= -->
-<!--     <section id="counts" class="counts section-bg">
-      <div class="container">
-
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Students</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Courses</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Events</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Trainers</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Counts Section -->
+    
 
     <!-- ======= Why Us Section ======= -->
     <?php  
     foreach ($results3 as $result3):
     ?>
     <section id="why-us" class="why-us">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
@@ -123,7 +86,7 @@ foreach ($results2 as $result2):
               </div>
             </div>
           </div>
-          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
                 <div class="col-xl-4 d-flex align-items-stretch">
@@ -158,9 +121,9 @@ foreach ($results2 as $result2):
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
           <div class="col-lg-3 col-md-4">
             <div class="icon-box">
               <i class="fa fa-500px" style="color: #ffbb2c;"></i>
@@ -240,14 +203,14 @@ foreach ($results2 as $result2):
 
     <!-- ======= Popular Courses Section ======= -->
     <section id="popular-courses" class="courses">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
         <div class="section-title">
           <h2>Courses</h2>
           <p>Popular Courses</p>
         </div>
         
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
           <?php foreach($results24 as $result24):?>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="course-item">
@@ -288,9 +251,9 @@ foreach ($results2 as $result2):
       <?php
           foreach($results7 as $result7):
     ?>
-      <div class="container" data-aos="fade-up" style="display: flex;">
+      <div class="container"  style="display: flex;">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row">
           
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">

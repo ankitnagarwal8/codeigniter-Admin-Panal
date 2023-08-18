@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','upload','form_validation','session','encryption','email');
+$autoload['libraries'] = array('database','upload','form_validation','session','encryption','email','table');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('registration','Head_Model','Admin_data','Pagination_model','Edit_Student_data','Teacher_data','Teacher_Data_Show','Teacher_Data_Delete','Edit_Teacher_data','Basic_Data','home_data','Admin_home_data','about_data','trainers_data','course_data','Pagination_course_model','course_delete','contact','events_data','Pagination_events_model','Pricing_data','Delete_pricing','site_data');
+$autoload['model'] = array('registration','Head_Model','Admin_data','Pagination_model','Edit_Student_data','Teacher_data','Teacher_Data_Show','Teacher_Data_Delete','Edit_Teacher_data','Basic_Data','home_data','Admin_home_data','about_data','trainers_data','course_data','Pagination_course_model','course_delete','contact','events_data','Pagination_events_model','Pricing_data','Delete_pricing','site_data','email_pagenation');

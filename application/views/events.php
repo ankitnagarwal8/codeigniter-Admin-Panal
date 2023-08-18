@@ -22,7 +22,7 @@ foreach($events_details as $events_detail):
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
+    <div class="breadcrumbs">
       <div class="container">
         <h2><?php echo $events_detail['heading']; ?></h2>
         <p><?php echo $events_detail['paragraph']; ?></p>
@@ -31,7 +31,7 @@ foreach($events_details as $events_detail):
 <?php endforeach; ?>
     <!-- ======= Events Section ======= -->
     <section id="events" class="events">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="row">
           <?php

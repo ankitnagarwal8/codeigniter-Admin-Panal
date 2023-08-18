@@ -21,7 +21,7 @@
     <?php
     foreach($res as $res2):
     ?>
-    <div class="breadcrumbs" data-aos="fade-in">
+    <div class="breadcrumbs">
       <div class="container">
         <h2><?php echo $res2['heading']; ?></h2>
         <p><?php echo $res2['paragraph']; ?></p>
@@ -32,7 +32,7 @@
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="row">
 

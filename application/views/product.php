@@ -9,6 +9,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GeeksForGeeks</title>
 	<link rel="stylesheet" href="http://localhost/Student_Management/assets/css/adminstyle.css">
+	<!-- Datatable CSS -->
+	<link href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<style type="text/css">
+
+	</style>
 	
 </head>
 
@@ -115,7 +126,7 @@
 					</div>
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
-						<h3><a href="<?= base_url("sendmultiplemail/index"); ?>">Send mail</a></h3>
+						<h3><a href="<?= base_url("sendmultiplemail/"); ?>">Send mail</a></h3>
 					</div>
 
 					<div class="nav-option logout">
@@ -127,88 +138,92 @@
 			</nav>
 		</div>
 		<div class="main">
+			<h1>Product Details</h1>
+			<div class="container">
+				<form method="post" action="<?= base_url('sendmultiplemail/send'); ?>" enctype="multipart/form-data">
+					<!-- <div class="inputs">
+						Logo:<input type="file" name="logo">
+						
+					</div>
+					<div class="inputs">
+						Sell-text:<input type="text" name="sell_text">
+					</div>
 
-			<div class="searchbar2">
-				<input type="text"
-					name=""
-					id=""
-					placeholder="Search">
-				<div class="searchbtn">
-				<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="icn srchicn" alt="search-button">
-				</div>
+					<div class="inputs">
+						Product-image:<input type="file" name="product_img">
+					</div>
+					<div class="product_details">
+						Product-details:<br><textarea></textarea>
+					</div>
+					<div class="product_details">
+						<input type="submit" name="">
+					</div> -->
+					email:<input type="email" name="email"><br>
+					name:<input type="text" name="name"><br>
+					<input type="submit" name="">
+				</form>
 			</div>
-			<form method="post" action="<?= base_url('Basic_Details'); ?>" enctype="multipart/form-data">
-			<div class="box-container">
 
-				<div class="box box1">
-					
-					<div class="text">
-						<h2 class="topic-heading"><?php echo $data; ?></h2>
-						<h2 class="topic">Total Students</h2>
-					</div>
+			<div class="email-details">
+				<h1>email details</h1>
+				<table id='empTable' class='display dataTable'>
 
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-						alt="Views">
+   					<thead>
+       					<tr>
+                             <th>email</th>
+                             <th>Name</th>
+                             <th>Delete</th>
+       					</tr>
+   					</thead>
+
+				</table>
 				</div>
 
-				<div class="box box2">
-					<div class="text">
-						<h2 class="topic-heading"><?php echo $data2; ?></h2>
-						<h2 class="topic">Total Teacher</h2>
-					</div>
+				<div><h1>Product Details</h1></div>
 
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
-						alt="likes">
+
+				<div class="products">
+				  <form method="post" action="<?= base_url('sendmultiplemail/send_email_with_photo') ?>" enctype="multipart/form-data">	
+					Logo:<input type="file" name="logo"><br>
+					Sell:<input type="text" name="sell_contant"><br>
+					Product-image<input type="file" name="product_image"><br>
+					Product-Details:<input type="text" name="Product_details"><br>
+					<input type="submit" name="">
+				   </form>
 				</div>
 
-				<div class="box box3">
-					<div class="text">
-						<h2 class="topic-heading"><?php echo $data3; ?></h2>
-						<h2 class="topic">Course</h2>
-					</div>
 
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-						alt="comments">
-				</div>
 
-				<div class="box box4">
-					<div class="text">
-						<h2 class="topic-heading">70</h2>
-						<h2 class="topic">Site Visiters</h2>
-					</div>
 
-					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
-				</div>
-			</div>
-		</form>
-			<div class="report-container">
-				<div class="report-header">
-					<h1 class="recent-Articles">view update</h1>
-					<button class="view">View All</button>
-				</div>
 
-				<div class="report-body">
-					<div class="report-topic-heading">
-						<h3 class="t-op">Article</h3>
-						<h3 class="t-op">Views</h3>
-						<h3 class="t-op">Comments</h3>
-						<h3 class="t-op">Status</h3>
-					</div>
 
-					<div class="items">
-						
 
-						
 
-						
 
-						
 
-						
 
-					</div>
-				</div>
-			</div>
+
+	<!-- Script -->
+     <script type="text/javascript">
+     $(document).ready(function(){
+
+        $('#empTable').DataTable({
+          'processing': true,
+          'serverSide': true,
+          'serverMethod': 'post',
+          'ajax': {
+             'url':'<?= base_url('sendmultiplemail/emailList'); ?>'
+          },
+          'columns': [
+             { data: 'email' },
+             { data: 'name' },
+             { data: 'Delete' }
+          
+          ]
+        });
+     });
+     </script>
+	
 		</div>
 	</div>
 
