@@ -27,10 +27,10 @@
 		<tr>
 			<?php
 
-			foreach($products as $product):
+			foreach($obj->products as $product):
 
 			?> 
-			<td><?php echo $product->id; ?></td>
+			<td><?php echo $product; ?></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -40,15 +40,7 @@
 			<td></td>
 			<td></td>
 			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+		
 		<?php  endforeach; ?>
 		</tr>
 	</table>

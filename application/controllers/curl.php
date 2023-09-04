@@ -28,10 +28,51 @@ class CURL extends CI_Controller
         curl_setopt($ch, CURLOPT_URL, "https://dummyjson.com/products");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $results = curl_exec($ch);
-        $data['products'] = $results;
-        print_r($data);
-        $this->load->view('product_details', $data);
+        
+        $obj=json_decode(json_encode($results));
+       
+        $this->load->view('product_details', $obj);
         curl_close($ch);
+
+
+        /*if (is_object($results))
+        $obj = (array)$this->dismount($results);
+        if (is_array($results)) {
+        $new = array();
+        foreach ($results as $key => $val) {
+            $new[$key] = $this->object_to_array($val);
+        }
+    }
+    else
+        $new = $obj;
+    print_r($new);*/
+
+
+
+
+        /*$arr = json_decode(json_encode ( $results ) , true);
+        print_r($results);*/
+
+       // Checking if any error occurs
+       // during request or not
+        /*if($e = curl_error($ch)) {
+            echo $e;
+        } else {
+     
+        // Decoding JSON data
+        $decodedData =
+            json_decode($response, true);
+         
+        // Outputting JSON data in
+        // Decoded form
+            echo "<pre>";
+            var_dump($decodedData);
+        }
+ 
+        // Closing curl
+        curl_close($curl);*/
+        /*$this->load->view('product_details', $response);
+        curl_close($ch);*/
 
 
 
